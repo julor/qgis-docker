@@ -38,6 +38,8 @@ RUN apt update && apt install -y gnupg wget software-properties-common && \
 # standalone mode, without composing it with 'nginx'
 ADD conf/qgis-server-nginx.conf /etc/nginx/nginx.conf
 ADD start-xvfb-nginx.sh /usr/local/bin/start-xvfb-nginx.sh
+RUN chmod a+x /usr/local/bin/start-xvfb-nginx.sh
+
 
 ENV QGIS_PREFIX_PATH /usr
 ENV QGIS_PLUGINPATH /io/plugins
